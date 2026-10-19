@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataLab | Synthetic Student Dataset Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="logo">✦</span> Data<span>Lab</span></a><div class="local"><i></i> Local demo · No database required</div></header>
+<main class="container">
+<section class="hero">
+ <div class="hero-copy"><div class="eyebrow">✧ SYNTHETIC DATA WORKSPACE</div>
+ <h1>Student data,<br><em>without the real-world risk.</em></h1>
+ <p>Generate fictional student records for testing, demos, and classroom projects. Create a dataset, validate its quality, and export it as a CSV in seconds.</p>
+ <div class="tags"><span>✓ Fictional records</span><span>✓ Runs in your browser</span><span>✓ CSV export</span></div></div>
+ <div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="profile"><div class="avatar">ST</div><b></b><b class="short"></b><div class="bars"><i></i><i></i><i></i><i></i></div><small>SYNTHETIC PROFILE</small></div><div class="float check">✓ <span>Validated</span></div><div class="float csv">↓ <span>CSV ready</span></div></div>
+</section>
+<section class="section-head"><div><div class="eyebrow">WORKSPACE</div><h2>Build your dataset</h2></div><span class="pill"><i></i> Browser-based</span></section>
+<section class="config card">
+ <div class="config-title"><span class="step">01</span><div><h3>Configure records</h3><p>Choose how many fictional student records to create.</p></div></div>
+ <div><label for="recordCount">Number of records <strong>*</strong></label><div class="input-row"><input id="recordCount" type="number" min="30" max="1000" step="1" value="30"><button id="generateBtn" class="btn primary">✦ Generate dataset</button></div><small class="hint">Minimum 30 · Maximum 1,000 records</small><p id="inputError" class="error" role="alert" hidden></p></div>
+</section>
+<section class="stats">
+ <article class="card stat"><div class="stat-head">Total records <span class="icon purple">▤</span></div><strong id="totalStat">0</strong><small>Generated student rows</small></article>
+ <article class="card stat"><div class="stat-head">Missing values <span class="icon orange">⌕</span></div><strong id="missingStat">—</strong><small>Empty required fields</small></article>
+ <article class="card stat"><div class="stat-head">Duplicate records <span class="icon blue">⧉</span></div><strong id="duplicateStat">—</strong><small>Repeated complete rows</small></article>
+ <article class="card stat"><div class="stat-head">Validation status <span class="icon green">✓</span></div><strong id="statusStat" class="status-value">Not run</strong><small id="statusFoot">Validate your dataset</small></article>
+</section>
+<section class="card data-card">
+ <div class="card-head"><div class="heading"><span class="step">02</span><div><h3>Generated records</h3><p id="tableSubtitle">Your dataset will appear here after generation.</p></div></div><div class="actions"><button id="validateBtn" class="btn secondary" disabled>✓ Validate dataset</button><button id="downloadBtn" class="btn outline" disabled>↓ Download CSV</button></div></div>
+ <div class="table-wrap"><table><thead><tr><th>Student ID</th><th>Student name</th><th>Age</th><th>Course</th><th>Marks</th><th>Attendance</th><th>Grade</th></tr></thead><tbody id="tableBody"><tr><td colspan="7" class="empty">No dataset yet — generate records to get started.</td></tr></tbody></table></div>
+ <div class="table-foot"><span id="rowCountLabel">0 records</span><span>Showing all generated rows</span></div>
+</section>
+<section class="card validation">
+ <div class="heading"><span class="step">03</span><div><h3>Dataset validation report</h3><p>Check completeness, duplicates, field types, and consistency.</p></div></div>
+ <div id="reportPlaceholder" class="placeholder"><span>⌁</span><div><b>Ready when you are</b><p>Generate a dataset, then click <b>Validate dataset</b> to run quality checks.</p></div></div>
+ <div id="validationReport" hidden></div>
+</section>
+<aside class="privacy"><span>◇</span><div><b>Privacy by design</b><p>All generated data is synthetic and must not represent real individuals. This demo runs locally in your browser and does not connect to a database.</p></div></aside>
+<footer><span>DataLab · Synthetic Dataset Generator</span><span>Built with HTML, CSS &amp; vanilla JavaScript</span></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
